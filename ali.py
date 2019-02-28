@@ -62,17 +62,17 @@ file_name, certbot_domain, certbot_validation = sys.argv
 #certbot_validation = CERTBOT_VALIDATION 
 domain_arr = tldextract.extract(certbot_domain)
 root_domain = domain_arr.registered_domain
-rr = "_acme-challenge.%s" % domain_arr.subdomain
+rr = '_acme-challenge.%s' % domain_arr.subdomain
 
 domain = AliDNS()
 data = domain.describe_domain_records(root_domain)
-record_list = data["DomainRecords"]["Record"]
+record_list = data['DomainRecords']['Record']
 if rr != '_acme-challenge.':
     if record_list:
         for item in record_list:
             if rr == item['RR']:
                 domain.delete_domain_record(item['RecordId'])
 else:
-    rr = "_acme-challenge"
+    rr = '_acme-challenge'
 
 domain.add_domain_record(root_domain, certbot_validation, rr)
