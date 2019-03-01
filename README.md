@@ -1,12 +1,12 @@
 ## 申请证书
 
-特别说明： --manual-auth-hook 指定的 hook 文件（au.sh），其他操作完全相同。
+特别说明： --manual-auth-hook 指定的 hook 文件（ali）。
 ```
 测试是否有错误
-$ ./certbot-auto certonly --manual --preferred-challenges dns --manual-auth-hook /脚本目录/au.sh -d *.example.com --manual-public-ip-logging-ok --dry-run
+$ ./certbot-auto certonly --manual --preferred-challenges dns --manual-auth-hook /脚本目录/ali -d *.example.com --manual-public-ip-logging-ok --dry-run
 
 实际申请
-$ ./certbot-auto certonly --manual --preferred-challenges dns --manual-auth-hook /脚本目录/au.sh -d *.example.com --manual-public-ip-logging-ok  
+$ ./certbot-auto certonly --manual --preferred-challenges dns --manual-auth-hook /脚本目录/ali -d *.example.com --manual-public-ip-logging-ok  
 ```
 参数解释（可以不用关心）：
 
@@ -20,5 +20,5 @@ $ ./certbot-auto certonly --manual --preferred-challenges dns --manual-auth-hook
 
 如果你想为多个域名申请通配符证书（合并在一张证书中，也叫做 SAN 通配符证书），直接输入多个 -d 参数即可，比如：
 ```
-./certbot-auto certonly --manual --preferred-challenges dns --manual-auth-hook /脚本目录/au.sh -d example.com -d *.example.com --manual-public-ip-logging-ok 
+./certbot-auto certonly --manual --preferred-challenges dns --manual-auth-hook /脚本目录/ali -d example.com -d *.example.com --manual-public-ip-logging-ok 
 ```
