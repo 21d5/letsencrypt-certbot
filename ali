@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 #coding=utf-8
 
-import sys, tldextract, demjson, os, time 
+import tldextract, demjson, os, time 
 # pip3 install aliyun-python-sdk-core-v3
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.request import CommonRequest
