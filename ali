@@ -71,3 +71,5 @@ else:
     rr = '_acme-challenge'
 
 domain.add_domain_record(root_domain, certbot_validation, rr)
+# Sleep to make sure the change has time to propagate over to DNS
+time.sleep(25)
